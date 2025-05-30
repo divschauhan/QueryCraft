@@ -1,0 +1,186 @@
+version: "3.1"
+
+rules:
+- rule: Greet user
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say thanks
+  steps:
+  - intent: thank
+  - action: utter_thank
+
+- rule: Bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge
+
+# Form activation rules for each intent
+- rule: Activate form for crop_info_query
+  steps:
+  - intent: crop_info_query
+  - action: action_set_requested_info
+
+- rule: Activate form for disease_control_query
+  steps:
+  - intent: disease_control_query
+  - action: action_set_requested_info
+
+- rule: Activate form for nutrient_requirement_query
+  steps:
+  - intent: nutrient_requirement_query
+  - action: action_set_requested_info
+
+- rule: Activate form for pest_control_query
+  steps:
+  - intent: pest_control_query
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_fertilizer_requirements
+  steps:
+  - intent: ask_fertilizer_requirements
+  - action: action_set_requested_info
+
+- rule: Activate form for variety_yield_query
+  steps:
+  - intent: variety_yield_query
+  - action: action_set_requested_info
+
+- rule: Activate form for deficiency_related_query
+  steps:
+  - intent: deficiency_related_query
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_best_practices
+  steps:
+  - intent: ask_best_practices
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_crop_rotation
+  steps:
+  - intent: ask_crop_rotation
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_harvesting_time
+  steps:
+  - intent: ask_harvesting_time
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_insecticide_info
+  steps:
+  - intent: ask_insecticide_info
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_disease_prevention
+  steps:
+  - intent: ask_disease_prevention
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_natural_pest_control
+  steps:
+  - intent: ask_natural_pest_control
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_fungicide_info
+  steps:
+  - intent: ask_fungicide_info
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_pest_detection
+  steps:
+  - intent: ask_pest_detection
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_fertilizer_schedule
+  steps:
+  - intent: ask_fertilizer_schedule
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_fertilizer_application_method
+  steps:
+  - intent: ask_fertilizer_application_method
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_organic_fertilizer
+  steps:
+  - intent: ask_organic_fertilizer
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_water_requirement
+  steps:
+  - intent: ask_water_requirement
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_irrigation_methods
+  steps:
+  - intent: ask_irrigation_methods
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_drainage
+  steps:
+  - intent: ask_drainage
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_climate_requirements
+  steps:
+  - intent: ask_climate_requirements
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_weather_impact
+  steps:
+  - intent: ask_weather_impact
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_drought_management
+  steps:
+  - intent: ask_drought_management
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_crop_rotation_benefits
+  steps:
+  - intent: ask_crop_rotation_benefits
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_mixed_farming_techniques
+  steps:
+  - intent: ask_mixed_farming_techniques
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_crop_compatibility
+  steps:
+  - intent: ask_crop_compatibility
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_soil_type
+  steps:
+  - intent: ask_soil_type
+  - action: action_set_requested_info
+
+- rule: Activate form for ask_soil_preparation
+  steps:
+  - intent: ask_soil_preparation
+  - action: action_set_requested_info
+
+# Form handling rules
+- rule: Submit form
+  condition:
+  - active_loop: agriculture_form
+  steps:
+  - action: agriculture_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_submit_agriculture_form
+
+
+
+
+
+
+

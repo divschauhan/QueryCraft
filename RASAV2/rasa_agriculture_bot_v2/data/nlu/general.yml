@@ -1,0 +1,90 @@
+version: "3.1"
+
+nlu:
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - sure
+      - absolutely
+      - definitely
+      - yeah
+      - yep
+      - sounds good
+      - that's right
+      - ok
+      - okay
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - nope
+      - not at all
+      - negative
+      - definitely not
+      - I disagree
+
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - good morning
+      - good evening
+      - good afternoon
+      - hey there
+      - hi there
+      - greetings
+      - howdy
+      - what's up
+      - hello there
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you around
+      - see you later
+      - see ya
+      - take care
+      - catch you later
+      - have a nice day
+      - have a good one
+      - farewell
+      - until next time
+
+  - intent: thank
+    examples: |
+      - thanks
+      - thank you
+      - thanks a lot
+      - thank you very much
+      - I appreciate it
+      - thanks for your help
+      - that's helpful
+      - I appreciate your assistance
+      - great, thanks
+      - wonderful, thank you
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+      - who are you?
+      - what are you?
+      - are you real?
+      - are you an AI?
+      - what kind of bot are you?
+      - are you a chatbot?

@@ -1,0 +1,233 @@
+# # version: "3.1"
+
+# # stories:
+# # - story: Crop info query with crop provided
+# #   steps:
+# #   - intent: crop_info_query
+# #     entities:
+# #     - crop: "brinjal"
+# #   - action: action_set_requested_info
+# #   - action: agriculture_form
+# #   - active_loop: agriculture_form
+# #   - slot_was_set:
+# #       - crop: "brinjal"
+# #       - requested_info: "crop_info"
+# #   - action: agriculture_form
+# #   - active_loop: null
+# #   - action: action_submit_agriculture_form
+
+# # - story: Crop info query without crop
+# #   steps:
+# #   - intent: crop_info_query
+# #   - action: action_set_requested_info
+# #   - action: agriculture_form
+# #   - active_loop: agriculture_form
+# #   - slot_was_set:
+# #       - requested_info: "crop_info"
+# #   - slot_was_set:
+# #       - requested_slot: "crop"
+# #   - intent: crop_info_query
+# #     entities:
+# #     - crop: "potato"
+# #   - slot_was_set:
+# #       - crop: "potato"
+# #   - action: agriculture_form
+# #   - active_loop: null
+# #   - action: action_submit_agriculture_form
+
+# # - story: Disease control query with crop provided
+# #   steps:
+# #   - intent: disease_control_query
+# #     entities:
+# #     - crop: "capsicum"
+# #   - action: action_set_requested_info
+# #   - action: agriculture_form
+# #   - active_loop: agriculture_form
+# #   - slot_was_set:
+# #       - crop: "capsicum"
+# #       - requested_info: "disease_control"
+# #   - action: agriculture_form
+# #   - active_loop: null
+# #   - action: action_submit_agriculture_form
+
+# # - story: Disease control query without crop
+# #   steps:
+# #   - intent: disease_control_query
+# #   - action: action_set_requested_info
+# #   - action: agriculture_form
+# #   - active_loop: agriculture_form
+# #   - slot_was_set:
+# #       - requested_info: "disease_control"
+# #   - slot_was_set:
+# #       - requested_slot: "crop"
+# #   - intent: disease_control_query
+# #     entities:
+# #     - crop: "rice"
+# #   - slot_was_set:
+# #       - crop: "rice"
+# #   - action: agriculture_form
+# #   - active_loop: null
+# #   - action: action_submit_agriculture_form
+
+# # - story: Disease prevention query without crop
+# #   steps:
+# #   - intent: ask_disease_prevention
+# #   - action: action_set_requested_info
+# #   - action: agriculture_form
+# #   - active_loop: agriculture_form
+# #   - slot_was_set:
+# #       - requested_info: "disease_prevention"
+# #   - slot_was_set:
+# #       - requested_slot: "crop"
+# #   - intent: crop_info_query
+# #     entities:
+# #     - crop: "rice"
+# #   - slot_was_set:
+# #       - crop: "rice"
+# #   - action: agriculture_form
+# #   - active_loop: null
+# #   - action: action_submit_agriculture_form
+
+# # - story: Variety yield query with crop and variety provided
+# #   steps:
+# #   - intent: variety_yield_query
+# #     entities:
+# #     - crop: "brinjal"
+# #     - variety: "prarthana"
+# #   - action: action_set_requested_info
+# #   - action: agriculture_form
+# #   - active_loop: agriculture_form
+# #   - slot_was_set:
+# #       - crop: "brinjal"
+# #       - variety: "prarthana"
+# #       - requested_info: "variety_yield"
+# #   - action: agriculture_form
+# #   - active_loop: null
+# #   - action: action_submit_agriculture_form
+
+# # - story: Variety yield query with crop but without variety
+# #   steps:
+# #   - intent: variety_yield_query
+# #     entities:
+# #     - crop: "potato"
+# #   - action: action_set_requested_info
+# #   - action: agriculture_form
+# #   - active_loop: agriculture_form
+# #   - slot_was_set:
+# #       - crop: "potato"
+# #       - requested_info: "variety_yield"
+# #   - slot_was_set:
+# #       - requested_slot: "variety"
+# #   - intent: variety_yield_query
+# #     entities:
+# #     - variety: "kufri"
+# #   - slot_was_set:
+# #       - variety: "kufri"
+# #   - action: agriculture_form
+# #   - active_loop: null
+# #   - action: action_submit_agriculture_form
+
+# # - story: Best practices query with crop provided
+# #   steps:
+# #   - intent: ask_best_practices
+# #     entities:
+# #     - crop: "potato"
+# #   - action: action_set_requested_info
+# #   - action: agriculture_form
+# #   - active_loop: agriculture_form
+# #   - slot_was_set:
+# #       - crop: "potato"
+# #       - requested_info: "best_practices"
+# #   - action: agriculture_form
+# #   - active_loop: null
+# #   - action: action_submit_agriculture_form
+
+# # - story: Best practices query without crop
+# #   steps:
+# #   - intent: ask_best_practices
+# #   - action: action_set_requested_info
+# #   - action: agriculture_form
+# #   - active_loop: agriculture_form
+# #   - slot_was_set:
+# #       - requested_info: "best_practices"
+# #   - slot_was_set:
+# #       - requested_slot: "crop"
+# #   - intent: crop_info_query
+# #     entities:
+# #     - crop: "potato"
+# #   - slot_was_set:
+# #       - crop: "potato"
+# #   - action: agriculture_form
+# #   - active_loop: null
+# #   - action: action_submit_agriculture_form
+
+# # - story: Natural pest control query without crop
+# #   steps:
+# #   - intent: ask_natural_pest_control
+# #   - action: action_set_requested_info
+# #   - action: agriculture_form
+# #   - active_loop: agriculture_form
+# #   - slot_was_set:
+# #       - requested_info: "natural_pest_control"
+# #   - slot_was_set:
+# #       - requested_slot: "crop"
+# #   - intent: crop_info_query
+# #     entities:
+# #     - crop: "capsicum"
+# #   - slot_was_set:
+# #       - crop: "capsicum"
+# #   - action: agriculture_form
+# #   - active_loop: null
+# #   - action: action_submit_agriculture_form
+
+
+
+version: "3.1"
+
+stories:
+
+# - story: User asks for crop info with crop
+#   steps:
+#   - intent: crop_info_query
+#     entities:
+#       - crop: "brinjal"
+
+# - story: User asks for crop info without crop
+#   steps:
+#   - intent: crop_info_query
+
+# - story: User asks about disease control with crop
+#   steps:
+#   - intent: disease_control_query
+#     entities:
+#       - crop: "capsicum"
+
+# - story: User asks about disease control without crop
+#   steps:
+#   - intent: disease_control_query
+
+# - story: User asks about disease prevention
+#   steps:
+#   - intent: ask_disease_prevention
+
+# - story: User asks about variety yield with crop and variety
+#   steps:
+#   - intent: variety_yield_query
+#     entities:
+#       - crop: "brinjal"
+#       - variety: "prarthana"
+
+# - story: User asks about variety yield with crop only
+#   steps:
+#   - intent: variety_yield_query
+#     entities:
+#       - crop: "potato"
+
+# - story: User asks about best practices
+#   steps:
+#   - intent: ask_best_practices
+
+# - story: User asks about natural pest control
+#   steps:
+#   - intent: ask_natural_pest_control
+

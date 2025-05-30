@@ -1,0 +1,448 @@
+version: "3.1"
+
+nlu:
+  # Intent: ask_crop_info
+  - intent: crop_info_query
+    examples: |
+      - For which crops do you have information?
+      - Information about which crops do you have?
+      - What crops are available in the database?
+      - Can you provide details on [capsicum](crop)?
+      - Tell me about [potato](crop).
+      - What information do you have on [brinjal](crop)?
+      - I'm looking for details on [brinjal](crop).
+      - What can you tell me about [capsicum](crop) and [brinjal](crop)?
+      - Do you have information on both [brinjal](crop) and [potato](crop)?
+      - Are there any details on [capsicum](crop), [rice](crop), or [brinjal](crop)?
+      - Give me a summary of [potato](crop) cultivation.
+      - What can you share about [brinjal](crop)?
+      - What crops do you support?
+      - Can you list the crops you have data on?
+      - Do you have any details on [rice](crop)?
+      - Can you provide some insights into [capsicum](crop)?
+      - What do I need to know about [potato](crop)?
+      - Explain the growth process of [brinjal](crop).
+      - How is [rice](crop) cultivated?
+      - What are the best practices for growing [capsicum](crop)?
+      - What can you tell me about the soil requirements for [potato](crop)?
+      - Do you have information on growing [brinjal](crop) and [capsicum](crop)?
+      - Can you provide cultivation details for [rice](crop) and [potato](crop)?
+      - I want to learn about [brinjal](crop) farming.
+      - What is the ideal climate for [capsicum](crop)?
+      - Give me a general overview of [rice](crop).
+      - What is the growing season for [potato](crop)?
+      - Tell me about common pests affecting [brinjal](crop).
+      - Do you have any data on the water requirements for [capsicum](crop)?
+      - What fertilizers are needed for [potato](crop) cultivation?
+      - Can I get complete crop details on [rice](crop)?
+      - What are the harvesting methods for [capsicum](crop)?
+      - Provide a brief description of [brinjal](crop) farming.
+
+
+  - intent: disease_control_query
+    examples: |
+      - What diseases can affect [brinjal](crop)?
+      - What are the diseases that can attack [capsicum](crop)?
+      - Name the diseases affecting [brinjal](crop).
+      - What diseases impact [potato](crop)?
+      - Can you tell me about diseases of [brinjal](crop) and [capsicum](crop)?
+      - How can I prevent diseases in [rice](crop)?
+      - What common diseases should I watch out for in [potato](crop)?
+      - Are there specific diseases that attack [capsicum](crop)?
+      - What are the symptoms of diseases in [brinjal](crop)?
+      - How do I identify diseases in [rice](crop)?
+      - What are the major diseases of [rice](crop)?
+      - How can I identify fungal infections in [brinjal](crop)?
+      - What are the symptoms of bacterial wilt in [capsicum](crop)?
+      - How do I control viral diseases in [potato](crop)?
+      - What preventive measures should I take for [rice](crop) diseases?
+      - What is the best way to treat fungal infections in [brinjal](crop)?
+      - How do I prevent early blight in [potato](crop)?
+      - What is the most common disease in [capsicum](crop)?
+      - Can you list some common diseases in [brinjal](crop)?
+      - How can I protect [rice](crop) from blast disease?
+      - What causes powdery mildew in [capsicum](crop)?
+      - How do I treat bacterial wilt in [potato](crop)?
+      - What are the early signs of disease in [brinjal](crop)?
+      - Is there a natural way to prevent diseases in [capsicum](crop)?
+      - How do I stop leaf spot in [potato](crop)?
+      - What are the symptoms of sheath blight in [rice](crop)?
+      - How can I treat root rot in [brinjal](crop)?
+      - What chemical treatments are available for [capsicum](crop) diseases?
+      - What are the organic methods to control diseases in [potato](crop)?
+      - How do I deal with downy mildew in [capsicum](crop)?
+      - What are the major fungal diseases of [brinjal](crop)?
+      - How do I identify and treat bacterial leaf blight in [rice](crop)?
+      - Can you suggest some disease-resistant varieties of [potato](crop)?
+      - What is the impact of climate on [capsicum](crop) disease outbreaks?
+      - How do I manage disease outbreaks in [brinjal](crop) fields?
+
+  - intent: nutrient_requirement_query
+    examples: |
+      - What nutrients do [capsicum](crop) plants need?
+      - Can you tell me the nutrient requirements for [brinjal](crop)?
+      - What kind of nutrients does [rice](crop) need to grow well?
+      - How much nitrogen do I need for my [potato](crop) plants?
+      - Which nutrients are essential for [capsicum](crop) growth?
+      - What are the main nutrients required by [rice](crop)?
+      - Tell me about the nutrient requirements for [brinjal](crop) plants.
+      - I want to know the nutrient needs for growing [potato](crop).
+      - How much phosphorus is necessary for [capsicum](crop)?
+      - Do I need special nutrients for [brinjal](crop)?
+      - What nutrients should I provide for [rice](crop) cultivation?
+      - Can you list the nutrients needed for growing [potato](crop)?
+      - What is the nutrient requirement of [capsicum](crop)?
+      - Is there any specific nutrient requirement for [brinjal](crop)?
+      - Which nutrients are important for a healthy [potato](crop) crop?
+
+
+  - intent: pest_control_query
+    examples: |
+      - Name all kinds of pests that can affect the crops.
+      - What types of pests affect [brinjal](crop)?
+      - List all pests that can harm [capsicum](crop).
+      - What pests can attack [potato](crop)?
+      - Tell me about pests affecting [potato](crop).
+      - What are the pests that infest [capsicum](crop) and [brinjal](crop)?
+      - Can you provide a list of pests for [brinjal](crop)?
+      - What common pests should I be aware of for [potato](crop)?
+      - Are there specific pests that target [rice](crop)?
+      - How do I identify pests on [capsicum](crop)?
+
+  - intent: ask_fertilizer_requirements
+    examples: |
+      - What are the fertilizer requirements for [brinjal](crop)?
+      - What fertilizer does [capsicum](crop) need?
+      - What fertilizers should be used for [rice](crop)?
+      - How much fertilizer is required for [potato](crop)?
+      - Can you tell me the fertilizer needed for [brinjal](crop) and [capsicum](crop)?
+      - What types of fertilizers are best for [capsicum](crop)?
+      - How do I determine the right amount of fertilizer for [potato](crop)?
+      - Is there a specific fertilizer for [brinjal](crop)?
+      - Can you suggest a fertilization schedule for [brinjal](crop)?
+      - What is the recommended NPK ratio for [capsicum](crop)?
+      - What are the fertilizer requirements for [rice](crop)?
+      - How much fertilizer should I apply to [brinjal](crop)?
+      - What is the best NPK ratio for [capsicum](crop)?
+      - What type of fertilizer should I use for [potato](crop)?
+      - Can you suggest an organic fertilizer for [brinjal](crop)?
+      - What is the recommended fertilization schedule for [rice](crop)?
+      - How often should I apply fertilizer to [capsicum](crop)?
+      - What nutrients are essential for [potato](crop) growth?
+      - How much nitrogen does [brinjal](crop) need?
+      - What fertilizer mix is best for [capsicum](crop) in sandy soil?
+      - Should I use urea for [rice](crop)? If so, how much?
+      - What are the micronutrient requirements for [potato](crop)?
+      - What is the best fertilizer for high yield in [brinjal](crop)?
+      - How do I balance phosphorus and potassium for [capsicum](crop)?
+      - What type of compost is best for growing [rice](crop)?
+      - Can I use cow dung manure for [potato](crop)?
+      - What is the right time to apply fertilizers to [brinjal](crop)?
+      - How does soil pH affect fertilizer uptake in [capsicum](crop)?
+      - What organic fertilizers can I use for [rice](crop)?
+      - Should I apply fertilizers before or after irrigation for [potato](crop)?
+      - What fertilizer is recommended for disease-resistant [brinjal](crop)?
+      - How do I prevent over-fertilization in [capsicum](crop)?
+      - What is the best top-dressing fertilizer for [rice](crop)?
+      - Which fertilizer enhances root growth in [potato](crop)?
+      - What are the best foliar fertilizers for [brinjal](crop)?
+      - How do I improve nutrient absorption in [capsicum](crop)?
+      - Is there a specific fertilizer ratio for [potato](crop) during flowering?
+      - Can I mix different fertilizers for [rice](crop)?
+      - What is the ideal fertilizer dose for [brinjal](crop) in acidic soil?
+      - What are the best fertilizer combinations for high yield in [capsicum](crop)?
+
+
+  # Intent: ask_variety_yield
+  - intent: variety_yield_query
+    examples: |
+      - What is the average yield of the variety [bg251](variety) of [capsicum](crop)?
+      - How much does [prarthana](variety) yield for [brinjal](crop)?
+      - What is the yield of [abc](variety) for [brinjal](crop) on average?
+      - What can you tell me about the yield of [xyz](variety) of [potato](crop)?
+      - Can you provide the yield for [bg251](variety) of [capsicum](crop) and [prarthana](variety) of [brinjal](crop)?
+      - How many tons per hectare can I expect from [brinjal](crop)?
+      - What's the yield rate of [potato](crop) variety [kufri](variety)?
+      - Is the yield for [capsicum](crop) variety [bhagya](variety) high?
+      - What is the yield of [brinjal](crop) variety [raja](variety)?
+      - Can you tell me about the average yield of [brinjal](crop) variety [local](variety)?
+      - What are the best varieties of [rice](crop)?
+      - Can you name some high-yielding [brinjal](crop) varieties?
+      - What are the different types of [capsicum](crop) available?
+      - List the most disease-resistant varieties of [potato](crop).
+      - Are there any climate-specific varieties of [brinjal](crop)?
+      - Which varieties of [rice](crop) are best for waterlogged areas?
+      - What hybrid varieties of [capsicum](crop) are available?
+      - Can you suggest drought-resistant varieties of [potato](crop)?
+      - What are the early-maturing varieties of [brinjal](crop)?
+      - Which [capsicum](crop) variety is best for greenhouse cultivation?
+      - Are there any improved varieties of [rice](crop)?
+      - What local varieties of [potato](crop) are commonly grown?
+      - What are the high-yield varieties of [brinjal](crop)?
+      - Which variety of [capsicum](crop) has the best shelf life?
+      - Can you provide a comparison of [potato](crop) varieties?
+      - What are the most commonly grown varieties of [rice](crop) in India?
+      - Which [brinjal](crop) variety is best for organic farming?
+      - What are the recommended varieties of [capsicum](crop) for tropical climates?
+      - Are there any pest-resistant varieties of [potato](crop)?
+      - How do hybrid and traditional varieties of [brinjal](crop) compare?
+      - What are the NPK requirements for different [capsicum](crop) varieties?
+
+
+  # Intent: ask_deficiency_info
+  - intent: deficiency_related_query
+    examples: |
+      - What deficiencies can affect [brinjal](crop)?
+      - Deficiencies that affect crops are what?
+      - What deficiencies impact [capsicum](crop)?
+      - Which deficiencies occur in [brinjal](crop)?
+      - What kind of deficiencies are found in [potato](crop)?
+      - Can you tell me the deficiencies for [brinjal](crop) and [capsicum](crop)?
+      - How can I tell if my [potato](crop) has a nutrient deficiency?
+      - What are the signs of nutrient deficiency in [brinjal](crop)?
+      - Can you list the common deficiencies in [brinjal](crop)?
+      - What are the key nutrient deficiencies for [capsicum](crop)?
+      - What nutrient deficiencies commonly affect [rice](crop)?
+      - How do I identify nitrogen deficiency in [brinjal](crop)?
+      - What are the symptoms of potassium deficiency in [capsicum](crop)?
+      - How can I prevent calcium deficiency in [potato](crop)?
+      - What deficiencies cause yellowing of leaves in [brinjal](crop)?
+      - What are the effects of phosphorus deficiency on [rice](crop)?
+      - Which micronutrient deficiencies impact [capsicum](crop) growth?
+      - How do I correct magnesium deficiency in [potato](crop)?
+      - What are the early signs of iron deficiency in [brinjal](crop)?
+      - Can sulfur deficiency affect the yield of [capsicum](crop)?
+      - How does boron deficiency impact [potato](crop)?
+      - What is the best treatment for zinc deficiency in [rice](crop)?
+      - What happens if [brinjal](crop) lacks sufficient manganese?
+      - How do I fix copper deficiency in [capsicum](crop)?
+      - What deficiencies cause stunted growth in [potato](crop)?
+      - Are there any visible symptoms of molybdenum deficiency in [brinjal](crop)?
+      - How does silicon deficiency affect [rice](crop) production?
+      - Can you list common soil deficiencies that impact [capsicum](crop)?
+      - What deficiencies are most common in [potato](crop) under acidic soil?
+      - How can I prevent nutrient leaching in [brinjal](crop)?
+      - Which deficiency leads to poor flowering in [capsicum](crop)?
+      - What deficiencies can cause leaf curling in [potato](crop)?
+      - What role does calcium play in preventing deficiencies in [brinjal](crop)?
+      - How can I improve soil fertility to avoid deficiencies in [rice](crop)?
+
+
+  # Intent: ask_best_practices
+  - intent: ask_best_practices
+    examples: |
+      - What are the best practices for [brinjal](crop)?
+      - Best practices for growing [capsicum](crop) are what?
+      - What are the recommended practices for cultivating [brinjal](crop)?
+      - Tell me about the best growing practices for [potato](crop).
+      - Can you give me best practices for both [brinjal](crop) and [capsicum](crop)?
+      - What irrigation techniques are best for [brinjal](crop)?
+      - How do I maximize yield for [potato](crop)?
+      - Are there specific pest management practices for [capsicum](crop)?
+      - What planting techniques should I follow for [brinjal](crop)?
+      - Can you suggest maintenance practices for [brinjal](crop)?
+      - What are the best agricultural practices for [rice](crop)?
+      - How do I prepare the soil for growing [capsicum](crop)?
+      - What are the ideal spacing and planting techniques for [potato](crop)?
+      - How can I improve the germination rate of [brinjal](crop)?
+      - What are the best water management practices for [rice](crop)?
+      - How do I ensure optimal fertilizer use for [capsicum](crop)?
+      - What are the recommended mulching practices for [potato](crop)?
+      - How do I protect [brinjal](crop) from extreme weather conditions?
+      - What is the best crop rotation strategy for [capsicum](crop)?
+      - Can you suggest sustainable farming practices for [brinjal](crop)?
+      - How do I maintain proper drainage for [rice](crop) fields?
+      - What are the key pruning techniques for [capsicum](crop)?
+      - How do I increase resistance to pests in [potato](crop)?
+      - What are the best nursery management practices for [brinjal](crop)?
+      - How should I schedule irrigation for [capsicum](crop) during different growth stages?
+      - What are the ideal climate conditions for growing [rice](crop)?
+      - What pest control methods work best for [potato](crop) without chemicals?
+      - How do I prevent nutrient depletion in [brinjal](crop) fields?
+      - What are the best intercropping options for [capsicum](crop)?
+      - Can you provide a step-by-step guide for transplanting [brinjal](crop)?
+      - What are the recommended weed management practices for [rice](crop)?
+      - How do I improve fruit quality in [capsicum](crop)?
+      - What are the best organic farming techniques for [potato](crop)?
+      - How can I extend the shelf life of harvested [brinjal](crop)?
+      - What are the best disease prevention strategies for [rice](crop)?
+
+  - intent: ask_crop_rotation
+    examples: |
+      - How can I rotate cotton with legumes?
+      - What is the best crop rotation for sugarcane?
+      - Suggest a crop rotation for mustard farming.
+      - What crops can I plant after sorghum?
+      - How do I rotate lentils with cereals?
+      - What is a sustainable crop rotation for groundnuts?
+      - Give me an example of mixed crop rotation.
+
+  - intent: ask_harvesting_time
+    examples: |
+      - When should I harvest wheat?
+      - What is the best time to harvest rice?
+      - How do I know when to harvest maize?
+      - Tell me the harvesting period for barley.
+      - When should I start harvesting sunflower?
+      - What is the right time to harvest chickpeas?
+      - How do I determine the best harvesting time for cotton?
+      - When should I cut my sugarcane crop?
+      - What is the harvesting season for lentils?
+      - How do I know when to harvest sorghum?
+      - Tell me the ideal time for groundnut harvesting.
+      - What is the correct method to harvest mustard?
+      - When is the best time to harvest millet?
+      - Can I harvest soybean now?
+      - What signs indicate that my crops are ready for harvest?
+
+  - intent: ask_insecticide_info
+    examples: |
+      - Which insecticide should I use for my crops?
+      - What are the best insecticides for controlling insects?
+      - Can you suggest an insecticide for vegetable farming?
+      - How do I apply insecticides to my plants?
+      - Are there any safe insecticides for pest control?
+
+  - intent: ask_disease_prevention
+    examples: |
+      - How do I prevent diseases in my crops?
+      - What are some preventive measures for crop diseases?
+      - Can you suggest ways to avoid plant diseases?
+      - What steps should I take to keep my crops disease-free?
+      - How can I protect my plants from infections?
+
+  - intent: ask_natural_pest_control
+    examples: |
+      - Are there natural ways to control pests?
+      - What are organic methods for pest control?
+      - How can I manage pests without chemicals?
+      - Suggest some eco-friendly pest control solutions.
+      - Are there biological pest control techniques?
+
+  - intent: ask_fungicide_info
+    examples: |
+      - What fungicide should I use for my crops?
+      - Can you recommend a good fungicide?
+      - How do I apply fungicides properly?
+      - Are there organic fungicides available?
+      - What are the best fungicides for fruit trees?
+
+  - intent: ask_pest_detection
+    examples: |
+      - How can I detect pests in my farm?
+      - What are the signs of pest infestation in crops?
+      - How do I identify pests attacking my plants?
+      - Are there any tools for detecting crop pests?
+      - What are common pest detection methods?
+
+  - intent: ask_fertilizer_schedule
+    examples: |
+      - When should I apply fertilizers?
+      - What is the best time to fertilize crops?
+      - Can you provide a fertilizer schedule for maize?
+      - How often should I fertilize my plants?
+      - What is the correct fertilizer application timing?
+
+  - intent: ask_fertilizer_application_method
+    examples: |
+      - How do I apply fertilizer to my crops?
+      - What are the different ways to apply fertilizers?
+      - Can you explain the best method for fertilization?
+      - Should I use foliar or soil application for fertilizers?
+      - How to properly spread fertilizer in the field?
+
+  - intent: ask_organic_fertilizer
+    examples: |
+      - What are the best organic fertilizers?
+      - Can I use compost instead of chemical fertilizers?
+      - How do I make organic fertilizer at home?
+      - Are there natural alternatives to synthetic fertilizers?
+      - What are the benefits of using organic fertilizers?
+
+  - intent: ask_water_requirement
+    examples: |
+      - How much water does my crop need?
+      - What are the water requirements for wheat?
+      - How often should I water my plants?
+      - Can you tell me the ideal irrigation amount for tomatoes?
+      - How do I determine the water needs of my crops?
+  
+  - intent: ask_irrigation_methods
+    examples: |
+      - What are the different irrigation methods?
+      - Which irrigation technique is best for rice farming?
+      - Can you suggest water-saving irrigation techniques?
+      - What is drip irrigation, and how does it work?
+      - How do I choose the best irrigation method for my farm?
+  
+  - intent: ask_drainage
+    examples: |
+      - How can I improve drainage in my farm?
+      - What are the best ways to prevent waterlogging in fields?
+      - How do I fix poor drainage in my soil?
+      - Why is proper drainage important in farming?
+      - What are the effects of poor drainage on crops?
+  
+  - intent: ask_climate_requirements
+    examples: |
+      - What climate is best for growing wheat?
+      - Can I grow tomatoes in a cold climate?
+      - How does temperature affect crop growth?
+      - What are the climate requirements for rice?
+      - How do weather conditions impact my crops?
+  
+  - intent: ask_weather_impact
+    examples: |
+      - How does weather affect crop yield?
+      - What are the effects of heavy rainfall on farming?
+      - How can extreme heat impact my plants?
+      - Does sudden temperature change harm crops?
+      - What should I do if there is unexpected frost?
+  
+  - intent: ask_drought_management
+    examples: |
+      - How can I protect my crops from drought?
+      - What are the best drought management strategies?
+      - Can you suggest drought-resistant crops?
+      - How do I conserve water during dry seasons?
+      - What are the effects of drought on farming?
+  
+  - intent: ask_crop_rotation_benefits
+    examples: |
+      - Why is crop rotation important?
+      - What are the benefits of rotating crops?
+      - How does crop rotation improve soil health?
+      - Can crop rotation help with pest control?
+      - What are some good crop rotation practices?
+  
+  - intent: ask_mixed_farming_techniques
+    examples: |
+      - What is mixed farming?
+      - How does mixed farming benefit farmers?
+      - Can I combine livestock and crops in one farm?
+      - What are some examples of mixed farming?
+      - How does mixed farming improve soil fertility?
+  
+  - intent: ask_crop_compatibility
+    examples: |
+      - Which crops grow well together?
+      - Can I plant maize and beans together?
+      - What are good companion plants for tomatoes?
+      - How do I choose crops that are compatible?
+      - Does intercropping help improve crop yield?
+  
+  - intent: ask_soil_type
+    examples: |
+      - What soil type is best for growing potatoes?
+      - How do I test my soil type?
+      - Can I grow rice in sandy soil?
+      - What are the different types of soil in agriculture?
+      - How does soil type affect plant growth?
+  
+  - intent: ask_soil_preparation
+    examples: |
+      - How do I prepare the soil for planting?
+      - What are the steps in soil preparation?
+      - How can I improve soil fertility before planting?
+      - Should I plow the land before sowing seeds?
+      - What are the best soil preparation techniques for farming?

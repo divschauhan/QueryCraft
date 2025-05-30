@@ -1,0 +1,71 @@
+Query,Possible Intents
+What crops are available in the database?,crop_info_query
+Can I get complete crop details on [rice](crop)?,crop_info_query
+What is the impact of climate on [capsicum](crop) disease outbreaks?,"ask_cause_of_disease, ask_climate_requirements, ask_disease_prevention, ask_fungicide_info, ask_weather_impact, disease_control_query"
+What is the best way to treat fungal infections in [brinjal](crop)?,disease_control_query
+Tell me about the nutrient requirements for brinjal plants.,"deficiency_related_query, nutrient_requirement_query"
+How much nitrogen do I need for my potato plants?,nutrient_requirement_query
+What common pests should I be aware of for [potato](crop)?,"ask_insecticide_info, ask_natural_pest_control, ask_pest_detection, pest_control_query"
+What pests can attack [potato](crop)?,"ask_insecticide_info, ask_natural_pest_control, ask_pest_detection, pest_control_query"
+What is the recommended NPK ratio for [capsicum](crop)?,ask_fertilizer_requirements
+What are the fertilizer requirements for [rice](crop)?,"ask_fertilizer_application_method, ask_fertilizer_requirements, ask_fertilizer_schedule, ask_organic_fertilizer"
+How many tons per hectare can I expect from [brinjal](crop)?,variety_yield_query
+Can you suggest drought-resistant varieties of [potato](crop)?,variety_yield_query
+Are there any visible symptoms of molybdenum deficiency in [brinjal](crop)?,deficiency_related_query
+How do I fix copper deficiency in [capsicum](crop)?,deficiency_related_query
+What is the best crop rotation strategy for [capsicum](crop)?,"ask_best_practices, ask_crop_rotation, ask_crop_rotation_benefits"
+What are the recommended mulching practices for [potato](crop)?,ask_best_practices
+At what stage should I apply [urea](fertilizer) to [potato](crop)?,"ask_fertilizer_application_method, ask_fertilizer_requirements, ask_fertilizer_schedule, ask_organic_fertilizer, ask_stage_of_application"
+When should I apply [compost](fertilizer) for [brinjal](crop)?,"ask_fertilizer_application_method, ask_fertilizer_requirements, ask_fertilizer_schedule, ask_organic_fertilizer, ask_stage_of_application"
+What causes [bacterial blight](disease) in [rice](crop)?,"ask_cause_of_disease, ask_disease_prevention, ask_fungicide_info, disease_control_query"
+Can you explain the causes of [leaf spot](disease) in [potato](crop)?,"ask_cause_of_disease, ask_disease_prevention, ask_fungicide_info, disease_control_query"
+What is the maturity period of [brinjal](crop)?,ask_maturity_period
+Can you tell me the maturity period for [potato](crop)?,ask_maturity_period
+Could you help me with my garden,fallback
+What do I need to grow it,fallback
+Give me the sowing period for soybean.,ask_sowing_time
+What is the best time for sowing wheat?,ask_sowing_time
+How much distance is needed between millet plants?,ask_crop_spacing
+Can you tell me the spacing for cotton plants?,ask_crop_spacing
+What is the best rotation plan for maize?,ask_crop_rotation
+What is a sustainable crop rotation for groundnuts?,"ask_crop_rotation, ask_crop_rotation_benefits"
+When should I harvest wheat?,ask_harvesting_time
+What is the harvesting season for lentils?,ask_harvesting_time
+Can you suggest an insecticide for vegetable farming?,ask_insecticide_info
+What are the best insecticides for controlling insects?,ask_insecticide_info
+What are some preventive measures for crop diseases?,"ask_cause_of_disease, ask_disease_prevention, ask_fungicide_info, disease_control_query"
+How do I prevent diseases in my crops?,"ask_cause_of_disease, ask_disease_prevention, ask_fungicide_info, disease_control_query"
+How can I manage pests without chemicals?,"ask_insecticide_info, ask_natural_pest_control, ask_pest_detection, pest_control_query"
+Are there biological pest control techniques?,"ask_insecticide_info, ask_natural_pest_control, ask_pest_detection, pest_control_query"
+What are the best fungicides for fruit trees?,ask_fungicide_info
+How do I apply fungicides properly?,ask_fungicide_info
+What are the signs of pest infestation in crops?,"ask_insecticide_info, ask_natural_pest_control, ask_pest_detection, pest_control_query"
+Are there any tools for detecting crop pests?,"ask_insecticide_info, ask_natural_pest_control, ask_pest_detection, pest_control_query"
+When should I apply fertilizers?,"ask_fertilizer_application_method, ask_fertilizer_requirements, ask_fertilizer_schedule, ask_organic_fertilizer"
+Can you provide a fertilizer schedule for maize?,"ask_fertilizer_application_method, ask_fertilizer_requirements, ask_fertilizer_schedule, ask_organic_fertilizer"
+How do I apply fertilizer to my crops?,"ask_fertilizer_application_method, ask_fertilizer_requirements, ask_fertilizer_schedule, ask_organic_fertilizer"
+Can you explain the best method for fertilization?,ask_fertilizer_application_method
+What are the benefits of using organic fertilizers?,"ask_fertilizer_application_method, ask_fertilizer_requirements, ask_fertilizer_schedule, ask_organic_fertilizer"
+Are there natural alternatives to synthetic fertilizers?,"ask_fertilizer_application_method, ask_fertilizer_requirements, ask_fertilizer_schedule, ask_organic_fertilizer"
+How often should I water my plants?,"ask_drainage, ask_drought_management, ask_irrigation_methods, ask_water_requirement"
+What are the water requirements for wheat?,"ask_drainage, ask_drought_management, ask_irrigation_methods, ask_water_requirement"
+What are the different irrigation methods?,ask_irrigation_methods
+How do I choose the best irrigation method for my farm?,ask_irrigation_methods
+What are the best ways to prevent waterlogging in fields?,"ask_drainage, ask_drought_management, ask_irrigation_methods, ask_water_requirement"
+What are the effects of poor drainage on crops?,ask_drainage
+Can I grow tomatoes in a cold climate?,"ask_climate_requirements, ask_weather_impact"
+What are the climate requirements for rice?,"ask_climate_requirements, ask_weather_impact"
+What are the effects of heavy rainfall on farming?,ask_weather_impact
+How does weather affect crop yield?,"ask_weather_impact, variety_yield_query"
+How do I conserve water during dry seasons?,"ask_drainage, ask_drought_management, ask_irrigation_methods, ask_water_requirement"
+What are the best drought management strategies?,ask_drought_management
+What are some good crop rotation practices?,"ask_best_practices, ask_crop_rotation, ask_crop_rotation_benefits"
+Can crop rotation help with pest control?,"ask_crop_rotation, ask_crop_rotation_benefits, ask_insecticide_info, ask_natural_pest_control, ask_pest_detection, pest_control_query"
+How does mixed farming improve soil fertility?,"ask_mixed_farming_techniques, ask_soil_preparation, ask_soil_type"
+What is mixed farming?,ask_mixed_farming_techniques
+How do I choose crops that are compatible?,ask_crop_compatibility
+What are good companion plants for tomatoes?,ask_crop_compatibility
+How do I test my soil type?,"ask_soil_preparation, ask_soil_type"
+What soil type is best for growing potatoes?,"ask_soil_preparation, ask_soil_type"
+Should I plow the land before sowing seeds?,"ask_soil_preparation, ask_sowing_time"
+What are the best soil preparation techniques for farming?,"ask_soil_preparation, ask_soil_type"

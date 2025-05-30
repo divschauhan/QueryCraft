@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link id='favicon' rel="shortcut icon" href="../static/logo.png" type="image/x-png">
+    <title>KrishiAI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- for icons (used in buttons) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* Additional styles for image upload */
+        .image-upload-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            padding: 5px;
+        }
+        
+        .image-upload-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 15px;
+            cursor: pointer;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        
+        .image-upload-btn i {
+            margin-right: 5px;
+        }
+        
+        .image-upload-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .image-preview {
+            max-width: 100px;
+            max-height: 100px;
+            margin-left: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .upload-status {
+            margin-left: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .image-message {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .image-message img {
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            align-self: center;
+        }
+        
+        .upload-form {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            left: 0;
+            right: 0;
+            background: #f9f9f9;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            z-index: 100;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .upload-form.active {
+            display: block;
+        }
+        
+        .close-upload {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        
+        .submit-image-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        
+        .submit-image-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        .toggle-upload-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        
+        .toggle-upload-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="logo-title">
+                <div class="logo-circle">
+                  <img src="{{ url_for('static', filename='logo1.jpeg') }}" alt="KrishiAI Logo" class="logo-image">
+                </div>
+                <h1>KrishiAI</h1>
+            </div>
+        </div>
+        <div class="chat-messages" id="chatPanel">
+            <!-- Messages will be appended here -->
+        </div>
+        
+        <!-- Image upload form -->
+        <div class="upload-form" id="uploadForm">
+            <span class="close-upload" id="closeUpload">&times;</span>
+            <h3>Upload Plant Image</h3>
+            <p>Take or upload a clear photo of the plant leaf to detect diseases</p>
+            <form id="imageUploadForm" enctype="multipart/form-data">
+                <div class="input-group">
+                    <input type="file" id="imageFile" name="imageFile" accept="image/*" style="display: none;">
+                    <button type="button" id="selectImageBtn" class="image-upload-btn">
+                        <i class="fas fa-image"></i> Select Image
+                    </button>
+                    <span class="upload-status" id="uploadStatus">No image selected</span>
+                </div>
+                <div class="input-group">
+                    <img id="imagePreview" class="image-preview" src="#" alt="Preview">
+                </div>
+                <div class="input-group">
+                    <button type="submit" id="submitImageBtn" class="submit-image-btn" disabled>Analyze Plant</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="chat-input">
+            <form id="chatbot-form">
+                <input type="text" id="messageText" name="messageText" placeholder="Type your query...">
+                <button id="chatbot-form-btn" type="submit">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+                <button id="chatbot-form-btn-pause" type="button">
+                    <i class="fas fa-pause"></i>
+                </button>
+                <button id="chatbot-form-btn-voice" type="button">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button id="toggle-upload-btn" type="button" class="toggle-upload-btn">
+                    <i class="fas fa-camera"></i>
+                </button>
+            </form>
+        </div>
+        <div class="chat-footer">
+            <button id="chatbot-form-btn-clear">Clear Chat</button>
+            <div class="voice-reading">
+                <input type="checkbox" id="voiceReadingCheckbox">
+                <label for="voiceReadingCheckbox">Enable voice reading</label>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>

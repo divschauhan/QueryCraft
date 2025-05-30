@@ -1,0 +1,226 @@
+version: "3.1"
+
+intents:
+  - crop_info_query
+  - disease_control_query
+  - nutrient_requirement_query
+  - pest_control_query
+  - ask_fertilizer_requirements
+  - variety_yield_query
+  - deficiency_related_query
+  - ask_best_practices
+  - ask_crop_rotation
+  - ask_harvesting_time
+  - ask_insecticide_info
+  - ask_disease_prevention
+  - ask_natural_pest_control
+  - ask_fungicide_info
+  - ask_pest_detection
+  - ask_fertilizer_schedule
+  - ask_fertilizer_application_method
+  - ask_organic_fertilizer
+  - ask_water_requirement
+  - ask_irrigation_methods
+  - ask_drainage
+  - ask_climate_requirements
+  - ask_weather_impact
+  - ask_drought_management
+  - ask_crop_rotation_benefits
+  - ask_mixed_farming_techniques
+  - ask_crop_compatibility
+  - ask_soil_type
+  - ask_soil_preparation
+  - affirm
+  - deny
+  - greet
+  - goodbye
+  - thank
+  - bot_challenge
+
+entities:
+  - crop
+  - variety
+
+slots:
+  crop:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: crop
+  
+  variety:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: variety
+  
+  requested_slot:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+
+  requested_info:
+    type: categorical
+    values:
+      - crop_info
+      - disease_control
+      - nutrient_requirement
+      - pest_control
+      - fertilizer_requirement
+      - variety_yield
+      - deficiency_info
+      - best_practices
+      - crop_rotation
+      - harvesting_time
+      - insecticide_info
+      - disease_prevention
+      - natural_pest_control
+      - fungicide_info
+      - pest_detection
+      - fertilizer_schedule
+      - fertilizer_application_method
+      - organic_fertilizer
+      - water_requirement
+      - irrigation_methods
+      - drainage
+      - climate_requirements
+      - weather_impact
+      - drought_management
+      - crop_rotation_benefits
+      - mixed_farming_techniques
+      - crop_compatibility
+      - soil_type
+      - soil_preparation
+    influence_conversation: true
+    mappings:
+    - type: custom
+
+forms:
+  agriculture_form:
+    required_slots:
+      - crop
+      - variety
+
+responses:
+  utter_ask_crop:
+    - text: "For which crop would you like information?"
+  
+  utter_ask_variety:
+    - text: "Which variety of {crop} are you interested in?"
+  
+  utter_greet:
+    - text: "Hello! I'm your agriculture assistant. How can I help you today?"
+    - text: "Hi there! I'm here to provide information about crops and farming. What would you like to know?"
+  
+  utter_goodbye:
+    - text: "Goodbye! Feel free to ask if you have more agriculture questions."
+    - text: "Have a great day! Come back anytime for more farming information."
+  
+  utter_thank:
+    - text: "You're welcome! I'm happy to help with your agriculture questions."
+    - text: "My pleasure! Let me know if you need more information."
+  
+  utter_bot_challenge:
+    - text: "I'm an agriculture bot designed to help with farming information and advice."
+  
+  utter_default:
+    - text: "I'm not sure I understand. Could you rephrase your question about agriculture?"
+  
+  utter_crop_info:
+    - text: "Here's information about {crop}: [This would be filled with crop information from the knowledge base]"
+  
+  utter_disease_control:
+    - text: "Here's information about diseases affecting {crop} and their control measures: [This would be filled with disease control information from the knowledge base]"
+  
+  utter_nutrient_requirement:
+    - text: "Here's information about nutrient requirements for {crop}: [This would be filled with nutrient requirement information from the knowledge base]"
+  
+  utter_pest_control:
+    - text: "Here's information about pests affecting {crop} and their control measures: [This would be filled with pest control information from the knowledge base]"
+  
+  utter_fertilizer_requirement:
+    - text: "Here's information about fertilizer requirements for {crop}: [This would be filled with fertilizer requirement information from the knowledge base]"
+  
+  utter_variety_yield:
+    - text: "Here's information about yield for {variety} variety of {crop}: [This would be filled with variety yield information from the knowledge base]"
+  
+  utter_deficiency_info:
+    - text: "Here's information about nutrient deficiencies in {crop} and their symptoms: [This would be filled with deficiency information from the knowledge base]"
+  
+  utter_best_practices:
+    - text: "Here's information about best practices for cultivating {crop}: [This would be filled with best practices information from the knowledge base]"
+  
+  utter_crop_rotation:
+    - text: "Here's information about crop rotation strategies for {crop}: [This would be filled with crop rotation information from the knowledge base]"
+  
+  utter_harvesting_time:
+    - text: "Here's information about optimal harvesting time for {crop}: [This would be filled with harvesting time information from the knowledge base]"
+  
+  utter_insecticide_info:
+    - text: "Here's information about insecticides suitable for {crop}: [This would be filled with insecticide information from the knowledge base]"
+  
+  utter_disease_prevention:
+    - text: "Here's information about disease prevention methods for {crop}: [This would be filled with disease prevention information from the knowledge base]"
+  
+  utter_natural_pest_control:
+    - text: "Here's information about natural pest control methods for {crop}: [This would be filled with natural pest control information from the knowledge base]"
+  
+  utter_fungicide_info:
+    - text: "Here's information about fungicides suitable for {crop}: [This would be filled with fungicide information from the knowledge base]"
+  
+  utter_pest_detection:
+    - text: "Here's information about how to detect pests in {crop}: [This would be filled with pest detection information from the knowledge base]"
+  
+  utter_fertilizer_schedule:
+    - text: "Here's information about fertilizer application schedule for {crop}: [This would be filled with fertilizer schedule information from the knowledge base]"
+  
+  utter_fertilizer_application_method:
+    - text: "Here's information about methods to apply fertilizer to {crop}: [This would be filled with fertilizer application method information from the knowledge base]"
+  
+  utter_organic_fertilizer:
+    - text: "Here's information about organic fertilizers suitable for {crop}: [This would be filled with organic fertilizer information from the knowledge base]"
+  
+  utter_water_requirement:
+    - text: "Here's information about water requirements for {crop}: [This would be filled with water requirement information from the knowledge base]"
+  
+  utter_irrigation_methods:
+    - text: "Here's information about irrigation methods suitable for {crop}: [This would be filled with irrigation methods information from the knowledge base]"
+  
+  utter_drainage:
+    - text: "Here's information about drainage systems for {crop} cultivation: [This would be filled with drainage information from the knowledge base]"
+  
+  utter_climate_requirements:
+    - text: "Here's information about climate requirements for {crop}: [This would be filled with climate requirements information from the knowledge base]"
+  
+  utter_weather_impact:
+    - text: "Here's information about impact of weather on {crop}: [This would be filled with weather impact information from the knowledge base]"
+  
+  utter_drought_management:
+    - text: "Here's information about drought management strategies for {crop}: [This would be filled with drought management information from the knowledge base]"
+  
+  utter_crop_rotation_benefits:
+    - text: "Here's information about benefits of crop rotation for {crop}: [This would be filled with crop rotation benefits information from the knowledge base]"
+  
+  utter_mixed_farming_techniques:
+    - text: "Here's information about mixed farming techniques involving {crop}: [This would be filled with mixed farming techniques information from the knowledge base]"
+  
+  utter_crop_compatibility:
+    - text: "Here's information about crops compatible with {crop}: [This would be filled with crop compatibility information from the knowledge base]"
+  
+  utter_soil_type:
+    - text: "Here's information about soil types suitable for {crop}: [This would be filled with soil type information from the knowledge base]"
+  
+  utter_soil_preparation:
+    - text: "Here's information about soil preparation methods for {crop}: [This would be filled with soil preparation information from the knowledge base]"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - validate_agriculture_form
+  - action_set_requested_info
+  - action_submit_agriculture_form
