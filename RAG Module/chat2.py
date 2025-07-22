@@ -78,7 +78,7 @@ from langchain_openai import ChatOpenAI
 # Initialize the OpenRouter language model
 llm = ChatOpenAI(
     model_name="openai/gpt-3.5-turbo",  # Use "openai/gpt-3.5-turbo" or "openai/gpt-4"
-    openai_api_key="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",  # Replace with your OpenRouter API key
+    openai_api_key="Replace with your OpenRouter API key",
     openai_api_base="https://openrouter.ai/api/v1",  # OpenRouter API base URL
     temperature=0.1,
     max_tokens=512
